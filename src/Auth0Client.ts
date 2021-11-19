@@ -291,7 +291,9 @@ export default class Auth0Client {
     ) {
       this.worker = new TokenWorker();
     }
-
+    
+    // Reset to undefined value to avoid exception from auth0 call
+    options.nowProvider = undefined
     this.customOptions = getCustomInitialOptions(options);
   }
 
